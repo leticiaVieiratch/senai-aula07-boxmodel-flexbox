@@ -1,0 +1,720 @@
+/* ==========================================================================
+   SENAI - Disciplina: Frameworks Front-end
+   Docente: Prof. Me. Deivison S. Takatu
+   Atividade 01: Demonstração de Box Model (20 Elementos) & 20 Propriedades Flexbox
+   ========================================================================== */
+
+/* Reset básico e tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Flexbox na raiz para empilhar conteúdo e rodapé */
+  display: flex;                  /* [FLEX PROP 01]: display: flex */
+  flex-direction: column;         /* [FLEX PROP 02]: flex-direction: column */
+}
+
+.main-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  flex-grow: 1;                   /* [FLEX PROP 03]: flex-grow */
+}
+
+/* ==========================================================================
+   AUDITORIA DOS 20 ELEMENTOS COM AS 4 DIMENSÕES DO BOX MODEL:
+   (Content: width/height | Padding | Border | Margin)
+   E AS PROPRIEDADES DE FLEXBOX RESPONSIVO
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 01: Barra de navegação (.elem-01-navbar)
+   -------------------------------------------------------------------------- */
+.elem-01-navbar {
+  /* Box Model: */
+  width: 100%;                    /* Content: Width */
+  min-height: 72px;               /* Content: Height */
+  padding: 14px 32px;             /* Padding */
+  border-bottom: 3px solid #2563eb;/* Border */
+  margin: 0 0 24px 0;             /* Margin */
+  
+  /* Flexbox: */
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;            /* [FLEX PROP 04]: flex-direction: row */
+  justify-content: space-between; /* [FLEX PROP 05]: justify-content: space-between */
+  align-items: center;            /* [FLEX PROP 06]: align-items: center */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 02: Logotipo e Emblema (.elem-02-brand)
+   -------------------------------------------------------------------------- */
+.elem-02-brand {
+  /* Box Model: */
+  width: auto;                    /* Content: Width */
+  height: 44px;                   /* Content: Height */
+  padding: 6px 14px;              /* Padding */
+  border: 1px solid #cbd5e1;      /* Border */
+  margin: 0 16px 0 0;             /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  align-items: center;
+  gap: 12px;                      /* [FLEX PROP 07]: gap */
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.senai-tag {
+  background: #e11d48;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.brand-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 03: Lista de Navegação (.elem-03-nav-links)
+   -------------------------------------------------------------------------- */
+.elem-03-nav-links {
+  /* Box Model: */
+  width: auto;                    /* Content: Width */
+  height: 40px;                   /* Content: Height */
+  padding: 0 10px;                /* Padding */
+  border: 1px dashed #94a3b8;     /* Border */
+  margin: 0;                      /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 04: Item de Link 1 (.elem-04-nav-item)
+   -------------------------------------------------------------------------- */
+.elem-04-nav-item {
+  /* Box Model: */
+  width: 110px;                   /* Content: Width */
+  height: 34px;                   /* Content: Height */
+  padding: 6px 12px;              /* Padding */
+  border: 1px solid transparent;  /* Border */
+  margin: 2px 4px;                /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: center;        /* [FLEX PROP 08]: justify-content: center */
+  align-items: center;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.elem-04-nav-item a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.elem-04-nav-item:hover {
+  background: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 05: Item de Link Ativo (.elem-05-nav-item-active)
+   -------------------------------------------------------------------------- */
+.elem-05-nav-item-active {
+  /* Box Model: */
+  width: 130px;                   /* Content: Width */
+  height: 34px;                   /* Content: Height */
+  padding: 6px 14px;              /* Padding */
+  border: 1px solid #bfdbfe;      /* Border */
+  margin: 2px 4px;                /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eff6ff;
+  border-radius: 6px;
+}
+
+.elem-05-nav-item-active a {
+  text-decoration: none;
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 06: Botão de Ação do Menu (.elem-06-nav-btn)
+   -------------------------------------------------------------------------- */
+.elem-06-nav-btn {
+  /* Box Model: */
+  width: 120px;                   /* Content: Width */
+  height: 34px;                   /* Content: Height */
+  padding: 6px 16px;              /* Padding */
+  border: 1px solid #1d4ed8;      /* Border */
+  margin: 2px 0 2px 6px;          /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2563eb;
+  border-radius: 6px;
+}
+
+.elem-06-nav-btn a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 07: Banner Hero (.elem-07-hero-section)
+   -------------------------------------------------------------------------- */
+.elem-07-hero-section {
+  /* Box Model: */
+  width: 100%;                    /* Content: Width */
+  min-height: 180px;              /* Content: Height */
+  padding: 36px 40px;             /* Padding */
+  border: 2px solid #3b82f6;      /* Border */
+  margin: 0 auto 32px auto;       /* Margin */
+  max-width: 1200px;
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;                /* [FLEX PROP 09]: flex-wrap: wrap */
+  gap: 24px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+}
+
+.hero-text-content {
+  flex: 1 1 500px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border: 1px solid #3b82f6;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.hero-text-content h1 {
+  font-size: 1.55rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.hero-text-content p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 08: Card de Estatística no Hero (.elem-08-hero-stat-card)
+   -------------------------------------------------------------------------- */
+.elem-08-hero-stat-card {
+  /* Box Model: */
+  width: 220px;                   /* Content: Width */
+  height: 120px;                  /* Content: Height */
+  padding: 16px 20px;             /* Padding */
+  border: 2px solid rgba(255, 255, 255, 0.15); /* Border */
+  margin: 8px 0;                  /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Seções de Título */
+.section-title {
+  margin: 24px 0 16px 0;
+}
+
+.section-title h2 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+}
+
+/* Container de Métricas */
+.metrics-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;  /* [FLEX PROP 10]: justify-content: space-evenly */
+  align-items: stretch;           /* [FLEX PROP 11]: align-items: stretch */
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 09: Card de Métrica Content (.elem-09-metric-card-content)
+   -------------------------------------------------------------------------- */
+.elem-09-metric-card-content {
+  /* Box Model: */
+  width: 240px;                   /* Content: Width */
+  min-height: 160px;              /* Content: Height */
+  padding: 20px 16px;             /* Padding */
+  border: 2px solid #38bdf8;      /* Border */
+  margin: 6px;                    /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;    /* [FLEX PROP 12]: justify-content: flex-start */
+  align-items: center;
+  flex-basis: 240px;              /* [FLEX PROP 13]: flex-basis */
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 10: Card de Métrica Padding (.elem-10-metric-card-padding)
+   -------------------------------------------------------------------------- */
+.elem-10-metric-card-padding {
+  /* Box Model: */
+  width: 240px;                   /* Content: Width */
+  min-height: 160px;              /* Content: Height */
+  padding: 24px 18px;             /* Padding */
+  border: 2px solid #4ade80;      /* Border */
+  margin: 6px;                    /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 240px;
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 11: Card de Métrica Border (.elem-11-metric-card-border)
+   -------------------------------------------------------------------------- */
+.elem-11-metric-card-border {
+  /* Box Model: */
+  width: 240px;                   /* Content: Width */
+  min-height: 160px;              /* Content: Height */
+  padding: 20px 16px;             /* Padding */
+  border: 3px dashed #f59e0b;     /* Border */
+  margin: 6px;                    /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 240px;
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 12: Card de Métrica Margin (.elem-12-metric-card-margin)
+   -------------------------------------------------------------------------- */
+.elem-12-metric-card-margin {
+  /* Box Model: */
+  width: 240px;                   /* Content: Width */
+  min-height: 160px;              /* Content: Height */
+  padding: 20px 16px;             /* Padding */
+  border: 2px solid #f43f5e;      /* Border */
+  margin: 10px 6px;               /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 240px;
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 13: Barra de Aviso (.elem-13-alert-banner)
+   -------------------------------------------------------------------------- */
+.elem-13-alert-banner {
+  /* Box Model: */
+  width: 100%;                    /* Content: Width */
+  min-height: 56px;               /* Content: Height */
+  padding: 12px 20px;             /* Padding */
+  border: 1px solid #fde047;      /* Border */
+  border-left: 6px solid #eab308; /* Border accent */
+  margin: 0 0 28px 0;             /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #fefce8;
+  border-radius: 8px;
+}
+
+.alert-icon { font-size: 1.4rem; }
+.alert-message { flex-grow: 1; font-size: 0.9rem; color: #854d0e; }
+.alert-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #854d0e;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* Painel de Cards */
+.cards-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;        /* [FLEX PROP 14]: align-items: flex-start */
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 14: Card de Perfil (.elem-14-profile-card)
+   -------------------------------------------------------------------------- */
+.elem-14-profile-card {
+  /* Box Model: */
+  width: 420px;                   /* Content: Width */
+  min-height: 96px;               /* Content: Height */
+  padding: 16px 20px;             /* Padding */
+  border: 1px solid #e2e8f0;      /* Border */
+  margin: 0 0 12px 0;             /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;                 /* [FLEX PROP 15]: flex-shrink: 0 */
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h4 {
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.profile-role {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 15: Tag de Status (.elem-15-status-tag)
+   -------------------------------------------------------------------------- */
+.elem-15-status-tag {
+  /* Box Model: */
+  width: 76px;                    /* Content: Width */
+  height: 28px;                   /* Content: Height */
+  padding: 4px 10px;              /* Padding */
+  border: 1px solid #86efac;      /* Border */
+  margin: 0 4px;                  /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;             /* [FLEX PROP 16]: align-self: center */
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 16: Preview de Código (.elem-16-code-preview)
+   -------------------------------------------------------------------------- */
+.elem-16-code-preview {
+  /* Box Model: */
+  width: 500px;                   /* Content: Width */
+  min-height: 130px;              /* Content: Height */
+  padding: 14px 18px;             /* Padding */
+  border: 1px solid #334155;      /* Border */
+  margin: 0 0 12px 0;             /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #0f172a;
+  border-radius: 12px;
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 6px;
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #eab308; }
+.dot.green { background: #22c55e; }
+.code-title { font-size: 0.75rem; color: #94a3b8; margin-left: 8px; }
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 17: Painel de Ações Rápidas (.elem-17-action-panel)
+   -------------------------------------------------------------------------- */
+.elem-17-action-panel {
+  /* Box Model: */
+  width: 100%;                    /* Content: Width */
+  min-height: 120px;              /* Content: Height */
+  padding: 24px;                  /* Padding */
+  border: 1px solid #cbd5e1;      /* Border */
+  margin: 0 0 32px 0;             /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  /* [FLEX PROP 17]: justify-content: space-around */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;     /* [FLEX PROP 18]: justify-content: flex-end */
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 18: Botão Primário (.elem-18-primary-btn)
+   -------------------------------------------------------------------------- */
+.elem-18-primary-btn {
+  /* Box Model: */
+  width: 170px;                   /* Content: Width */
+  height: 44px;                   /* Content: Height */
+  padding: 10px 22px;             /* Padding */
+  border: 2px solid #1d4ed8;      /* Border */
+  margin: 4px;                    /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;                       /* [FLEX PROP 19]: order */
+  background: #2563eb;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.elem-18-primary-btn:hover {
+  background: #1d4ed8;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 19: Botão Secundário (.elem-19-secondary-btn)
+   -------------------------------------------------------------------------- */
+.elem-19-secondary-btn {
+  /* Box Model: */
+  width: 160px;                   /* Content: Width */
+  height: 44px;                   /* Content: Height */
+  padding: 10px 20px;             /* Padding */
+  border: 1px solid #cbd5e1;      /* Border */
+  margin: 4px;                    /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;                       /* [FLEX PROP 20]: order */
+  background: #f8fafc;
+  color: #475569;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.elem-19-secondary-btn:hover {
+  background: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTO 20: Rodapé Institucional (.elem-20-footer)
+   -------------------------------------------------------------------------- */
+.elem-20-footer {
+  /* Box Model: */
+  width: 100%;                    /* Content: Width */
+  min-height: 80px;               /* Content: Height */
+  padding: 20px 32px;             /* Padding */
+  border-top: 2px solid #e2e8f0;  /* Border */
+  margin: 32px 0 0 0;             /* Margin */
+
+  /* Flexbox: */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.senai-stamp {
+  font-weight: 700;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #fff1f2;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO RESPONSIVA VIA MEDIA QUERIES (Requisito 3)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .elem-01-navbar {
+    flex-direction: column;       /* Reorganiza em coluna em telas pequenas */
+    align-items: flex-start;
+    gap: 14px;
+    height: auto;
+    padding: 16px;
+  }
+
+  .elem-03-nav-links {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .elem-07-hero-section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+  }
+
+  .elem-08-hero-stat-card {
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column-reverse; /* Inverte a ordem no mobile */
+    align-items: stretch;
+  }
+
+  .elem-18-primary-btn,
+  .elem-19-secondary-btn {
+    width: 100%;
+  }
+
+  .elem-20-footer {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}

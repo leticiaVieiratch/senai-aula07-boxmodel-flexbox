@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laboratório Prático de Box Model e Flexbox - Atividade 01 SENAI">
+  <title>SENAI • Laboratório de Box Model & Flexbox</title>
+  <!-- Inclusão do CSS de forma externa através da tag <link> (Requisito 1) -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ELEMENTO 01: Barra de navegação principal (Flex Container 1) -->
+  <nav class="elem-01-navbar">
+    <!-- ELEMENTO 02: Logotipo e Emblema Institucional (Flex Container 2) -->
+    <div class="elem-02-brand">
+      <span class="senai-tag">SENAI</span>
+      <span class="brand-title">FlexBox & BoxModel Lab</span>
+    </div>
+
+    <!-- ELEMENTO 03: Lista de links de navegação (Flex Container 3) -->
+    <ul class="elem-03-nav-links">
+      <!-- ELEMENTO 04: Item de link individual 1 -->
+      <li class="elem-04-nav-item"><a href="#boxmodel">Box Model</a></li>
+      <!-- ELEMENTO 05: Item de link individual 2 (com destaque) -->
+      <li class="elem-05-nav-item-active"><a href="#flexbox">Propriedades Flex</a></li>
+      <!-- ELEMENTO 06: Botão de ação do cabeçalho -->
+      <li class="elem-06-nav-btn"><a href="#galeria">20 Elementos</a></li>
+    </ul>
+  </nav>
+
+  <!-- ELEMENTO 07: Banner Hero de introdução (Flex Container 4) -->
+  <header class="elem-07-hero-section">
+    <div class="hero-text-content">
+      <span class="hero-badge">Aula 07 • Frameworks CSS</span>
+      <h1>Demonstração das 4 Dimensões do Box Model e 20 Propriedades Flexbox</h1>
+      <p>Todos os 20 elementos desta página possuem estilização explícita de Content (Width/Height), Padding, Border e Margin, organizados com distribuição flexível responsiva.</p>
+    </div>
+    <!-- ELEMENTO 08: Caixa de destaque com contagem técnica -->
+    <div class="elem-08-hero-stat-card">
+      <span class="stat-number">20/20</span>
+      <span class="stat-label">Elementos & Propriedades Auditados</span>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <!-- Seção de Métricas (Flex Container 5) -->
+    <section class="section-title">
+      <h2>Seção 1: Indicadores e Métricas do Modelo de Caixas</h2>
+    </section>
+
+    <div class="metrics-container">
+      <!-- ELEMENTO 09: Card de Métrica Content -->
+      <article class="elem-09-metric-card-content">
+        <div class="card-icon">📐</div>
+        <h3>1. Content</h3>
+        <p>Área central do elemento onde residem textos e imagens (width/height).</p>
+      </article>
+
+      <!-- ELEMENTO 10: Card de Métrica Padding -->
+      <article class="elem-10-metric-card-padding">
+        <div class="card-icon">📦</div>
+        <h3>2. Padding</h3>
+        <p>Espaçamento interno entre a borda externa e o conteúdo interno.</p>
+      </article>
+
+      <!-- ELEMENTO 11: Card de Métrica Border -->
+      <article class="elem-11-metric-card-border">
+        <div class="card-icon">🖼️</div>
+        <h3>3. Border</h3>
+        <p>Linha delimitadora que envolve o preenchimento e o conteúdo.</p>
+      </article>
+
+      <!-- ELEMENTO 12: Card de Métrica Margin -->
+      <article class="elem-12-metric-card-margin">
+        <div class="card-icon">↔️</div>
+        <h3>4. Margin</h3>
+        <p>Espaço externo que isola o elemento dos demais elementos vizinhos.</p>
+      </article>
+    </div>
+
+    <!-- Seção de Componentes e Demonstrações Flex (Flex Container 6) -->
+    <section class="section-title" id="flexbox">
+      <h2>Seção 2: Componentes Flexbox Responsivos</h2>
+    </section>
+
+    <!-- ELEMENTO 13: Barra de Notificação/Aviso em Destaque (Flex Container 7) -->
+    <div class="elem-13-alert-banner">
+      <span class="alert-icon">⚡</span>
+      <div class="alert-message">
+        <strong>Aviso de Responsividade:</strong> Redimensione a janela do seu navegador para inspecionar a adaptação dos elementos via Flexbox e Media Queries!
+      </div>
+      <button class="alert-close-btn" onclick="this.parentElement.style.display='none'">✕</button>
+    </div>
+
+    <!-- Painel com Cards de Destaque -->
+    <div class="cards-layout">
+      <!-- ELEMENTO 14: Card de Perfil de Desenvolvedor (Flex Container 8) -->
+      <article class="elem-14-profile-card">
+        <div class="avatar-circle">DV</div>
+        <div class="profile-info">
+          <h4>Dev Front-End SENAI</h4>
+          <span class="profile-role">Especialista Web & UI</span>
+        </div>
+        <!-- ELEMENTO 15: Tag de Status de Disponibilidade -->
+        <span class="elem-15-status-tag">Online</span>
+      </article>
+
+      <!-- ELEMENTO 16: Card de Código com Snippet Técnico (Flex Container 9) -->
+      <div class="elem-16-code-preview">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">box-model.css</span>
+        </div>
+        <pre><code>.box {
+  width: 280px;
+  padding: 16px;
+  border: 2px solid #2563eb;
+  margin: 12px;
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- Seção de Ações e Formulário -->
+    <div class="action-grid">
+      <!-- ELEMENTO 17: Caixa de Interação com Botões Variados (Flex Container 10) -->
+      <div class="elem-17-action-panel">
+        <h3>Ações Rápidas</h3>
+        <p>Demonstração de propriedades de alinhamento com justify-content e align-self:</p>
+        <div class="button-group">
+          <!-- ELEMENTO 18: Botão de Ação Primário com Box Model Estilizado -->
+          <button class="elem-18-primary-btn">Salvar Alterações</button>
+          <!-- ELEMENTO 19: Botão de Ação Secundário com Inversão de Ordem -->
+          <button class="elem-19-secondary-btn">Restaurar Padrão</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ELEMENTO 20: Rodapé Institucional Completo (Flex Container 11) -->
+  <footer class="elem-20-footer">
+    <div class="footer-left">
+      <p><strong>Disciplina: Frameworks Front-end</strong> | Prof. Me. Deivison S. Takatu</p>
+      <small>Atividade 01: 20 Elementos com Box Model Completo + 20 Propriedades Flexbox</small>
+    </div>
+    <div class="footer-right">
+      <span class="senai-stamp">SENAI SP • 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>
